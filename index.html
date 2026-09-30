@@ -1,683 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Krishna Dental Care – New Ranip, Ahmedabad</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root {
-  --blue:   #1a6fc4;
-  --blue2:  #0d4f97;
-  --sky:    #e8f4fd;
-  --teal:   #00b4a0;
-  --gold:   #f0a500;
-  --dark:   #0e1a2b;
-  --gray:   #6b7280;
-  --light:  #f9fbfe;
-  --white:  #ffffff;
-  --radius: 14px;
-  --shadow: 0 4px 24px rgba(26,111,196,0.10);
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; }
-
-/* ─── NAV ─── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(26,111,196,0.10);
-  padding: 0 5%;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 68px;
-}
-.nav-brand { display: flex; align-items: center; gap: 10px; }
-.nav-brand .logo-circle {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue), var(--teal));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; color: white;
-}
-.nav-brand h1 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--blue2); line-height: 1.1; }
-.nav-brand p  { font-size: 10px; color: var(--gray); letter-spacing: 0.05em; text-transform: uppercase; }
-.nav-links { display: flex; gap: 28px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--dark); font-size: 14px; font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover { color: var(--blue); }
-.nav-cta {
-  background: var(--blue); color: white; border: none; border-radius: 8px;
-  padding: 9px 20px; font-size: 14px; font-weight: 600; cursor: pointer;
-  text-decoration: none; transition: background 0.2s;
-}
-.nav-cta:hover { background: var(--blue2); }
-.hamburger { display: none; background: none; border: none; font-size: 22px; cursor: pointer; }
-
-/* ─── HERO ─── */
-.hero {
-  min-height: 90vh;
-  background: linear-gradient(135deg, #0e1a2b 0%, #1a3a5c 55%, #0d4f97 100%);
-  position: relative; overflow: hidden;
-  display: flex; align-items: center; padding: 80px 5% 60px;
-}
-.hero::before {
-  content: '';
-  position: absolute; top: -100px; right: -100px;
-  width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,180,160,0.15) 0%, transparent 70%);
-}
-.hero::after {
-  content: '';
-  position: absolute; bottom: -150px; left: -100px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(26,111,196,0.2) 0%, transparent 70%);
-}
-.hero-content { max-width: 600px; position: relative; z-index: 2; }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20);
-  border-radius: 50px; padding: 6px 16px;
-  font-size: 12px; color: rgba(255,255,255,0.8);
-  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px;
-}
-.hero-badge span { color: var(--teal); font-size: 9px; }
-.hero h2 {
-  font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 60px);
-  color: white; line-height: 1.12; margin-bottom: 20px;
-  font-weight: 700;
-}
-.hero h2 em { color: var(--teal); font-style: normal; }
-.hero p { font-size: 16px; color: rgba(255,255,255,0.70); margin-bottom: 36px; max-width: 460px; }
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-primary {
-  background: var(--teal); color: white; border: none; border-radius: 10px;
-  padding: 14px 30px; font-size: 15px; font-weight: 600; cursor: pointer;
-  text-decoration: none; transition: all 0.25s;
-  box-shadow: 0 4px 20px rgba(0,180,160,0.35);
-}
-.btn-primary:hover { background: #009e8c; transform: translateY(-1px); }
-.btn-ghost {
-  background: transparent; color: white;
-  border: 1.5px solid rgba(255,255,255,0.35);
-  border-radius: 10px; padding: 14px 30px;
-  font-size: 15px; font-weight: 500; cursor: pointer;
-  text-decoration: none; transition: all 0.25s;
-}
-.btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.07); }
-
-.hero-stats {
-  display: flex; gap: 40px; margin-top: 50px;
-  border-top: 1px solid rgba(255,255,255,0.12); padding-top: 30px;
-}
-.hero-stat .num { font-family: 'Playfair Display', serif; font-size: 28px; color: white; font-weight: 700; }
-.hero-stat .lbl { font-size: 12px; color: rgba(255,255,255,0.50); text-transform: uppercase; letter-spacing: 0.05em; }
-
-/* ─── FLOATING CARDS ─── */
-.hero-visual {
-  flex: 1; display: flex; justify-content: center; align-items: center;
-  position: relative; z-index: 2; min-height: 380px;
-}
-.float-card {
-  position: absolute; background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 16px; padding: 16px 20px; color: white;
-}
-.float-card .icon { font-size: 28px; margin-bottom: 6px; }
-.float-card .ttl { font-size: 13px; font-weight: 600; }
-.float-card .sub { font-size: 11px; color: rgba(255,255,255,0.55); }
-.float-card:nth-child(1) { top: 10%; right: 5%; animation: floatY 4s ease-in-out infinite; }
-.float-card:nth-child(2) { bottom: 20%; right: 20%; animation: floatY 5s ease-in-out infinite 0.8s; }
-.float-card:nth-child(3) { top: 40%; left: 5%; animation: floatY 4.5s ease-in-out infinite 1.5s; }
-@keyframes floatY {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.tooth-icon {
-  font-size: 110px; text-align: center;
-  animation: floatY 3.5s ease-in-out infinite;
-}
-
-/* ─── SECTIONS SHARED ─── */
-section { padding: 80px 5%; }
-.section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); margin-bottom: 10px; }
-.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: var(--dark); margin-bottom: 14px; }
-.section-sub { font-size: 16px; color: var(--gray); max-width: 560px; }
-.section-head { text-align: center; margin-bottom: 54px; }
-.section-head .section-sub { margin: 0 auto; }
-
-/* ─── SERVICES ─── */
-.services-bg { background: var(--light); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; }
-.service-card {
-  background: white; border-radius: var(--radius); padding: 28px 24px;
-  border: 1px solid rgba(26,111,196,0.08);
-  box-shadow: var(--shadow); transition: all 0.3s;
-}
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(26,111,196,0.15); border-color: rgba(26,111,196,0.20); }
-.service-icon { font-size: 36px; margin-bottom: 14px; }
-.service-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
-.service-card p { font-size: 14px; color: var(--gray); line-height: 1.6; }
-.service-tag { display: inline-block; margin-top: 14px; font-size: 11px; font-weight: 600; background: var(--sky); color: var(--blue); border-radius: 6px; padding: 3px 10px; }
-
-/* ─── WHY US ─── */
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.why-list { display: flex; flex-direction: column; gap: 24px; }
-.why-item { display: flex; gap: 16px; align-items: flex-start; }
-.why-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.why-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-.why-item p { font-size: 14px; color: var(--gray); }
-.why-visual {
-  background: linear-gradient(135deg, var(--blue2), var(--blue));
-  border-radius: 20px; padding: 40px; text-align: center; color: white;
-}
-.why-visual .big-num { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 700; line-height: 1; color: rgba(255,255,255,0.15); }
-.why-visual .stars { font-size: 28px; margin: 10px 0; }
-.why-visual h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-.why-visual p { font-size: 14px; color: rgba(255,255,255,0.7); }
-.rating-badge { display: inline-block; background: var(--gold); color: var(--dark); border-radius: 8px; padding: 6px 14px; font-size: 24px; font-weight: 700; margin-bottom: 12px; }
-
-/* ─── CONTACT INFO ─── */
-.contact-bg { background: linear-gradient(135deg, #0e1a2b, #1a3a5c); color: white; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-.contact-info h3 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 30px; }
-.info-item { display: flex; gap: 14px; margin-bottom: 22px; }
-.info-dot { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-.info-item h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
-.info-item p  { font-size: 15px; color: rgba(255,255,255,0.88); }
-.map-box {
-  border-radius: 16px; overflow: hidden; height: 300px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.4); font-size: 14px; text-align: center;
-  flex-direction: column; gap: 10px;
-}
-.map-box a { color: var(--teal); text-decoration: underline; font-size: 14px; }
-
-/* ─── PATIENT FORM ─── */
-.form-section-bg { background: var(--sky); }
-.form-card {
-  max-width: 860px; margin: 0 auto;
-  background: white; border-radius: 20px;
-  padding: 48px; box-shadow: 0 8px 48px rgba(26,111,196,0.12);
-}
-.form-card .form-head { text-align: center; margin-bottom: 36px; }
-.form-card .form-head h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--dark); }
-.form-card .form-head p { font-size: 14px; color: var(--gray); margin-top: 6px; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.form-group { display: flex; flex-direction: column; gap: 7px; }
-.form-group.full { grid-column: 1 / -1; }
-.form-group label {
-  font-size: 12px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.07em; color: var(--blue2);
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  border: 1.5px solid #dde4ee; border-radius: 10px;
-  padding: 12px 14px; font-family: 'Inter', sans-serif;
-  font-size: 14px; color: var(--dark); background: #fafbfc;
-  transition: border 0.2s, box-shadow 0.2s;
-  outline: none; width: 100%;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,111,196,0.10);
-  background: white;
-}
-.form-group textarea { resize: vertical; min-height: 90px; }
-.payment-options { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
-.pay-opt { display: none; }
-.pay-label {
-  display: flex; align-items: center; gap: 8px;
-  border: 1.5px solid #dde4ee; border-radius: 10px;
-  padding: 10px 16px; cursor: pointer; font-size: 14px;
-  transition: all 0.2s; background: #fafbfc;
-}
-.pay-opt:checked + .pay-label {
-  border-color: var(--blue); background: var(--sky);
-  color: var(--blue); font-weight: 600;
-}
-.form-divider { grid-column: 1/-1; border: none; border-top: 1.5px dashed #e5eaf2; margin: 6px 0; }
-.form-section-title { grid-column: 1/-1; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); border-left: 3px solid var(--blue); padding-left: 10px; }
-.submit-btn {
-  grid-column: 1 / -1; margin-top: 10px;
-  background: linear-gradient(135deg, var(--blue), var(--teal));
-  color: white; border: none; border-radius: 12px;
-  padding: 16px 40px; font-size: 16px; font-weight: 700;
-  cursor: pointer; letter-spacing: 0.03em;
-  transition: all 0.25s; box-shadow: 0 4px 20px rgba(26,111,196,0.3);
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(26,111,196,0.4); }
-
-/* ─── SUCCESS TOAST ─── */
-#successBanner {
-  display: none; grid-column: 1/-1;
-  background: linear-gradient(135deg, #00b4a0, #007d70);
-  color: white; border-radius: 12px; padding: 18px 24px;
-  text-align: center; font-weight: 600; font-size: 15px;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: var(--dark); color: rgba(255,255,255,0.55);
-  padding: 40px 5%; text-align: center; font-size: 13px;
-}
-footer a { color: var(--teal); text-decoration: none; }
-footer .ft-brand { font-family: 'Playfair Display', serif; color: white; font-size: 18px; margin-bottom: 8px; }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 860px) {
-  .hero { flex-direction: column; text-align: center; }
-  .hero p { margin: 0 auto 36px; }
-  .hero-btns { justify-content: center; }
-  .hero-stats { justify-content: center; }
-  .hero-visual { display: none; }
-  .why-grid, .contact-grid { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-group.full { grid-column: 1; }
-  .form-section-title, .form-divider { grid-column: 1; }
-  .submit-btn { grid-column: 1; }
-  #successBanner { grid-column: 1; }
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: block; }
-  .form-card { padding: 28px 20px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Dental Care - Best Dental Clinic in New Ranip, Ahmedabad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <style> body { font-family: 'Poppins', sans-serif; } </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800">
 
-<!-- ═══ NAV ═══ -->
-<nav>
-  <div class="nav-brand">
-    <div class="logo-circle">🦷</div>
-    <div>
-      <h1>Krishna Dental Care</h1>
-      <p>New Ranip, Ahmedabad</p>
-    </div>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#patient-form">Book Visit</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#patient-form" class="nav-cta">Book Appointment</a>
-  <button class="hamburger" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">☰</button>
-</nav>
-
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge"><span>●</span> Now Accepting Patients · New Ranip, Ahmedabad</div>
-    <h2>Your Smile Deserves <em>Expert Care</em></h2>
-    <p>Krishna Dental Care provides gentle, modern dental treatments near Khodiyar Mata Temple Road. Trusted by families across New Ranip for over a decade.</p>
-    <div class="hero-btns">
-      <a href="#patient-form" class="btn-primary">📅 Book Appointment</a>
-      <a href="#contact" class="btn-ghost">📍 Find Us</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num">1000+</div><div class="lbl">Happy Patients</div></div>
-      <div class="hero-stat"><div class="num">⭐ 5.0</div><div class="lbl">Patient Rating</div></div>
-      <div class="hero-stat"><div class="num">10+</div><div class="lbl">Years Experience</div></div>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="tooth-icon">🦷</div>
-    <div class="float-card">
-      <div class="icon">✅</div>
-      <div class="ttl">Painless Treatment</div>
-      <div class="sub">Modern anesthesia</div>
-    </div>
-    <div class="float-card">
-      <div class="icon">🦷</div>
-      <div class="ttl">Same-Day Appointments</div>
-      <div class="sub">Walk-ins Welcome</div>
-    </div>
-    <div class="float-card">
-      <div class="icon">💳</div>
-      <div class="ttl">Online & Cash</div>
-      <div class="sub">UPI · Card · Cash</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SERVICES ═══ -->
-<section id="services" class="services-bg">
-  <div class="section-head">
-    <div class="section-label">What We Treat</div>
-    <h2 class="section-title">Our Dental Services</h2>
-    <p class="section-sub">Comprehensive dental care for all ages with advanced equipment and gentle techniques.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🪥</div>
-      <h3>Teeth Cleaning</h3>
-      <p>Professional scaling and polishing to remove plaque, tartar, and stains. Keep your smile fresh and healthy.</p>
-      <span class="service-tag">Preventive</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔧</div>
-      <h3>Root Canal Treatment</h3>
-      <p>Painless RCT with modern rotary files to save your infected tooth and relieve pain quickly.</p>
-      <span class="service-tag">Restorative</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">👑</div>
-      <h3>Crowns & Bridges</h3>
-      <p>High-quality ceramic and zirconia crowns for damaged or missing teeth that look and feel natural.</p>
-      <span class="service-tag">Restorative</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🦷</div>
-      <h3>Dental Implants</h3>
-      <p>Permanent tooth replacement with titanium implants — the gold standard for missing teeth.</p>
-      <span class="service-tag">Advanced</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3>Teeth Whitening</h3>
-      <p>Professional bleaching treatments for a brighter, more confident smile in a single visit.</p>
-      <span class="service-tag">Cosmetic</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">😬</div>
-      <h3>Braces & Aligners</h3>
-      <p>Metal braces and clear aligners to straighten teeth at affordable prices for all ages.</p>
-      <span class="service-tag">Orthodontics</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🧒</div>
-      <h3>Kids Dentistry</h3>
-      <p>Child-friendly environment with gentle treatments to help your little ones love the dentist.</p>
-      <span class="service-tag">Pediatric</span>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏃</div>
-      <h3>Tooth Extraction</h3>
-      <p>Simple and surgical extractions including wisdom tooth removal with minimal discomfort.</p>
-      <span class="service-tag">Surgery</span>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WHY US ═══ -->
-<section id="why">
-  <div class="why-grid">
-    <div>
-      <div class="section-label">Why Choose Us</div>
-      <h2 class="section-title">Dental Care You Can Trust</h2>
-      <p class="section-sub" style="margin-bottom:36px">Patients from across New Ranip choose us for our gentle approach and honest treatment.</p>
-      <div class="why-list">
-        <div class="why-item">
-          <div class="why-icon">🎓</div>
-          <div><h4>Qualified Dentists</h4><p>BDS & MDS qualified doctors with years of clinical experience in general and specialized dentistry.</p></div>
+    <!-- TOP BAR -->
+    <div class="bg-teal-700 text-white text-xs sm:text-sm py-2 px-4 flex justify-between items-center">
+        <span><i class="fa-solid fa-location-dot text-teal-300 mr-1"></i> Shop No. 2, Rjd Arcade, Near Khodiyar Mata Temple Road & Kshitij Hotel, New Ranip, Ahmedabad-382480</span>
+        <div class="hidden md:flex space-x-4">
+            <span><i class="fa-solid fa-phone mr-1"></i> +91 98765 43210</span>
+            <span><i class="fa-solid fa-clock mr-1"></i> Mon-Sat: 10AM - 8PM</span>
         </div>
-        <div class="why-item">
-          <div class="why-icon">🧹</div>
-          <div><h4>Sterilized Equipment</h4><p>All instruments are autoclave-sterilized and we follow strict infection control protocols every day.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">💰</div>
-          <div><h4>Transparent Pricing</h4><p>No hidden charges. We tell you the full cost before starting any treatment. Cash and UPI accepted.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">⏰</div>
-          <div><h4>Convenient Hours</h4><p>Open 7 days a week with morning and evening slots to fit your busy schedule.</p></div>
-        </div>
-      </div>
     </div>
-    <div class="why-visual">
-      <div class="big-num">5.0</div>
-      <div class="rating-badge">⭐ 5.0</div>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <h3>Perfect Patient Rating</h3>
-      <p>Consistently rated 5 stars by our patients on JustDial and Google for gentle, effective dental care.</p>
-      <br/>
-      <p style="font-size:13px;opacity:0.6">📍 Near Khodiyar Mata Temple · New Ranip</p>
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/95 backdrop-blur sticky top-0 z-40 shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-teal-600 text-white rounded-lg flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-tooth"></i></div>
+                <div>
+                    <h1 class="text-xl font-bold text-teal-800 leading-none">Krishna Dental Care</h1>
+                    <p class="text-xs text-slate-500">Multispecialty Dental Clinic</p>
+                </div>
+            </div>
+            <div class="flex space-x-3">
+                <a href="#contact" class="bg-teal-600 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center"><i class="fa-solid fa-calendar-check mr-2"></i> Book Appointment</a>
+                <button onclick="toggleAdminModal()" class="bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-lg"><i class="fa-solid fa-user-gear mr-1"></i> Admin Section</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="bg-gradient-to-r from-teal-900 to-slate-900 text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-400/30">Trusted Clinic in New Ranip</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold">Healthy & Beautiful Smiles Start Here!</h1>
+                <p class="text-slate-300 text-sm">Painless, modern, and affordable dental care in New Ranip, Ahmedabad.</p>
+                <a href="#contact" class="inline-block bg-teal-500 text-slate-950 font-bold px-6 py-3 rounded-lg">Book Appointment</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" class="rounded-2xl shadow-2xl object-cover h-80 w-full" alt="Clinic">
+        </div>
+    </section>
+
+    <!-- SERVICES WITH PICS -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-extrabold text-slate-900 text-center mb-8">Our Dental Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="RCT">
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800">Root Canal Treatment</h3>
+                        <p class="text-xs text-slate-600 mt-1">Painless single-visit root canal treatments.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="Teeth Whitening">
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800">Teeth Whitening & Cleaning</h3>
+                        <p class="text-xs text-slate-600 mt-1">Laser whitening & tooth scaling.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="Dental Implants">
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800">Dental Implants</h3>
+                        <p class="text-xs text-slate-600 mt-1">Permanent replacement for missing teeth.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="Braces">
+                    <div class="p-4">
+                        <h3 class="font-bold text-slate-800">Braces & Aligners</h3>
+                        <p class="text-xs text-slate-600 mt-1">Perfectly aligned teeth and aesthetic smiles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FORM -->
+    <section id="contact" class="py-16 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Contact Information</h3>
+                <p class="text-xs text-slate-600 mb-2"><strong>Address:</strong> Shop No. 2, Rjd Arcade, Near Khodiyar Mata Temple Road & Kshitij Hotel, New Ranip, Ahmedabad-382480, Gujarat</p>
+                <p class="text-xs text-slate-600 mb-2"><strong>Phone:</strong> +91 98765 43210</p>
+                <p class="text-xs text-slate-600"><strong>Timings:</strong> 10:00 AM - 8:00 PM</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Book Appointment</h3>
+                <form id="appointmentForm" onsubmit="handleAppointmentSubmit(event)" class="space-y-3">
+                    <input type="text" id="patientName" placeholder="Full Name *" required class="w-full p-2 border rounded text-xs">
+                    <input type="tel" id="patientMobile" placeholder="Mobile No. *" required class="w-full p-2 border rounded text-xs">
+                    <select id="assignedDoctor" class="w-full p-2 border rounded text-xs"></select>
+                    <select id="patientTreatment" class="w-full p-2 border rounded text-xs">
+                        <option value="Teeth Cleaning">Teeth Cleaning</option>
+                        <option value="Root Canal Treatment (RCT)">Root Canal Treatment (RCT)</option>
+                        <option value="Dental Implant">Dental Implant</option>
+                        <option value="Braces / Aligners">Braces / Aligners</option>
+                    </select>
+                    <input type="date" id="visitDate" required class="w-full p-2 border rounded text-xs">
+                    <button type="submit" class="w-full bg-teal-600 text-white font-bold py-2 rounded text-xs">Submit & Save to System</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN MODAL -->
+    <div id="adminModal" class="fixed inset-0 bg-slate-900/60 hidden flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl w-full max-w-4xl p-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-lg">Admin Panel — Patients & Doctors</h3>
+                <button onclick="toggleAdminModal()" class="text-slate-500"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="flex space-x-3 mb-4">
+                <button onclick="exportToExcel()" class="bg-emerald-600 text-white text-xs px-3 py-1.5 rounded"><i class="fa-solid fa-file-excel mr-1"></i> Export Excel</button>
+                <button onclick="clearAllPatients()" class="bg-rose-600 text-white text-xs px-3 py-1.5 rounded">Clear Data</button>
+            </div>
+            <table class="w-full text-left text-xs border">
+                <thead class="bg-slate-100">
+                    <tr><th class="p-2">ID</th><th class="p-2">Name</th><th class="p-2">Mobile</th><th class="p-2">Doctor</th><th class="p-2">Treatment</th><th class="p-2">Status</th></tr>
+                </thead>
+                <tbody id="patientTableBody"></tbody>
+            </table>
+        </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ PATIENT FORM ═══ -->
-<section id="patient-form" class="form-section-bg">
-  <div class="form-card">
-    <div class="form-head">
-      <div class="section-label" style="text-align:center">New Patient Registration</div>
-      <h2>Patient Details Form</h2>
-      <p>Fill in your details below and we'll confirm your appointment shortly.</p>
-    </div>
-    <form id="patientForm" onsubmit="submitForm(event)">
-      <div class="form-grid">
+    <script>
+        let doctors = JSON.parse(localStorage.getItem('kdc_doctors')) || [{ name: "Dr. Bhavya Panchal", spec: "Chief Dentist" }];
+        let patients = JSON.parse(localStorage.getItem('kdc_patients')) || [];
 
-        <!-- PERSONAL INFO -->
-        <div class="form-section-title">👤 Personal Information</div>
+        function renderDoctors() {
+            document.getElementById('assignedDoctor').innerHTML = doctors.map(d => `<option value="${d.name}">${d.name}</option>`).join('');
+        }
 
-        <div class="form-group full">
-          <label>Full Name *</label>
-          <input type="text" id="f_name" placeholder="e.g. Ramesh Kumar Patel" required/>
-        </div>
+        function handleAppointmentSubmit(e) {
+            e.preventDefault();
+            patients.push({
+                id: 'KDC-' + String(patients.length + 1).padStart(4, '0'),
+                name: document.getElementById('patientName').value,
+                mobile: document.getElementById('patientMobile').value,
+                doctor: document.getElementById('assignedDoctor').value,
+                treatment: document.getElementById('patientTreatment').value,
+                visitDate: document.getElementById('visitDate').value,
+                status: 'Pending'
+            });
+            localStorage.setItem('kdc_patients', JSON.stringify(patients));
+            alert('Appointment Submitted & Saved successfully!');
+            document.getElementById('appointmentForm').reset();
+            renderTable();
+        }
 
-        <div class="form-group">
-          <label>Age *</label>
-          <input type="number" id="f_age" placeholder="e.g. 32" min="1" max="120" required/>
-        </div>
+        function toggleAdminModal() {
+            document.getElementById('adminModal').classList.toggle('hidden');
+            renderTable();
+        }
 
-        <div class="form-group">
-          <label>Gender</label>
-          <select id="f_gender">
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
-        </div>
+        function renderTable() {
+            document.getElementById('patientTableBody').innerHTML = patients.map((p, i) => `
+                <tr class="border-b">
+                    <td class="p-2 font-bold">${p.id}</td>
+                    <td class="p-2">${p.name}</td>
+                    <td class="p-2">${p.mobile}</td>
+                    <td class="p-2">${p.doctor}</td>
+                    <td class="p-2">${p.treatment}</td>
+                    <td class="p-2">
+                        <select onchange="updateStatus(${i}, this.value)" class="border rounded p-1">
+                            <option value="Pending" ${p.status==='Pending'?'selected':''}>Pending</option>
+                            <option value="In-Progress" ${p.status==='In-Progress'?'selected':''}>In-Progress</option>
+                            <option value="Completed" ${p.status==='Completed'?'selected':''}>Completed</option>
+                        </select>
+                    </td>
+                </tr>
+            `).join('');
+        }
 
-        <div class="form-group full">
-          <label>Full Address *</label>
-          <textarea id="f_address" placeholder="House No., Street, Area, Ahmedabad..." required></textarea>
-        </div>
-
-        <hr class="form-divider"/>
-
-        <!-- CONTACT -->
-        <div class="form-section-title">📞 Contact Details</div>
-
-        <div class="form-group">
-          <label>Mobile Number *</label>
-          <input type="tel" id="f_mobile" placeholder="e.g. 9876543210" maxlength="10" required/>
-        </div>
-
-        <div class="form-group">
-          <label>WhatsApp Number</label>
-          <input type="tel" id="f_whatsapp" placeholder="Same as mobile or different"/>
-        </div>
-
-        <hr class="form-divider"/>
-
-        <!-- VISIT INFO -->
-        <div class="form-section-title">🦷 Visit Details</div>
-
-        <div class="form-group">
-          <label>Preferred Date</label>
-          <input type="date" id="f_date"/>
-        </div>
-
-        <div class="form-group">
-          <label>Preferred Time</label>
-          <select id="f_time">
-            <option value="">Select Time Slot</option>
-            <option>Morning – 9:00 AM</option>
-            <option>Morning – 10:00 AM</option>
-            <option>Morning – 11:00 AM</option>
-            <option>Afternoon – 12:00 PM</option>
-            <option>Evening – 5:00 PM</option>
-            <option>Evening – 6:00 PM</option>
-            <option>Evening – 7:00 PM</option>
-          </select>
-        </div>
-
-        <div class="form-group full">
-          <label>Treatment / Problem *</label>
-          <select id="f_treatment" required>
-            <option value="">Select Treatment</option>
-            <option>Teeth Cleaning / Scaling</option>
-            <option>Root Canal Treatment (RCT)</option>
-            <option>Tooth Extraction</option>
-            <option>Dental Filling</option>
-            <option>Crown / Cap</option>
-            <option>Dental Implant</option>
-            <option>Braces / Aligners</option>
-            <option>Teeth Whitening</option>
-            <option>Dentures / Plates</option>
-            <option>Kids Dentistry</option>
-            <option>Pain / Emergency</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="form-group full">
-          <label>Describe Your Problem (Optional)</label>
-          <textarea id="f_notes" placeholder="Any pain, swelling, or specific concern..."></textarea>
-        </div>
-
-        <hr class="form-divider"/>
-
-        <!-- PAYMENT -->
-        <div class="form-section-title">💳 Payment Method</div>
-
-        <div class="form-group full">
-          <label>How Will You Pay? *</label>
-          <div class="payment-options">
-            <input type="radio" name="payment" id="pay_cash" value="Cash" class="pay-opt" required/>
-            <label for="pay_cash" class="pay-label">💵 Cash</label>
-
-            <input type="radio" name="payment" id="pay_upi" value="UPI (Online)" class="pay-opt"/>
-            <label for="pay_upi" class="pay-label">📱 UPI (Google Pay / PhonePe)</label>
-
-            <input type="radio" name="payment" id="pay_card" value="Card" class="pay-opt"/>
-            <label for="pay_card" class="pay-label">💳 Debit / Credit Card</label>
-
-            <input type="radio" name="payment" id="pay_net" value="Net Banking" class="pay-opt"/>
-            <label for="pay_net" class="pay-label">🏦 Net Banking</label>
-          </div>
-        </div>
-
-        <div id="successBanner">✅ Patient registered! We'll contact you on WhatsApp / Mobile soon. धन्यवाद!</div>
-
-        <button type="submit" class="submit-btn">
-          📋 Register Patient &amp; Book Appointment
-        </button>
-
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact" class="contact-bg">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="section-label" style="color: var(--teal)">Get In Touch</div>
-      <h3>Visit Our Clinic</h3>
-      <div class="info-item">
-        <div class="info-dot">📍</div>
-        <div>
-          <h4>Address</h4>
-          <p>Near Khodiyar Mata Temple Road, Kshitij Hotel Area, New Ranip, Ahmedabad – 382480</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-dot">📞</div>
-        <div>
-          <h4>Phone / WhatsApp</h4>
-          <p>Call or message us anytime for appointments</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-dot">⏰</div>
-        <div>
-          <h4>Clinic Hours</h4>
-          <p>Monday – Saturday: 9:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM<br/>Sunday: 9:00 AM – 1:00 PM</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-dot">🚌</div>
-        <div>
-          <h4>How to Reach</h4>
-          <p>Landmark: Near Khodiyar Mata Temple, New Ranip. Easy access from Ranip main road.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="map-box">
-        <div>🗺️</div>
-        <div>Krishna Dental Care<br/>New Ranip, Ahmedabad</div>
-        <a href="https://maps.google.com/?q=Krishna+Dental+Care+New+Ranip+Ahmedabad" target="_blank">Open in Google Maps →</a>
-      </div>
-      <br/>
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px; color:rgba(255,255,255,0.75); font-size:14px; line-height:1.8;">
-        <strong style="color:white;font-size:15px">💬 Book via WhatsApp</strong><br/>
-        Send us a message with your name, problem, and preferred time — we'll confirm quickly!<br/><br/>
-        <strong style="color:white">💳 Payments Accepted</strong><br/>
-        Cash · UPI · Google Pay · PhonePe · Paytm · Debit &amp; Credit Cards
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <p class="ft-brand">🦷 Krishna Dental Care</p>
-  <p>Near Khodiyar Mata Temple Road, New Ranip, Ahmedabad – 382480</p>
-  <br/>
-  <p>© 2025 Krishna Dental Care · All Rights Reserved · Made with ❤️ in Ahmedabad</p>
-</footer>
-
-<script>
-// Patient data storage (localStorage for this demo)
-let patients = JSON.parse(localStorage.getItem('kdc_patients') || '[]');
-
-function submitForm(e) {
-  e.preventDefault();
-
-  const payEl = document.querySelector('input[name="payment"]:checked');
-  if (!payEl) { alert('Please select a payment method.'); return; }
-
-  const record = {
-    id: 'KDC-' + String(patients.length + 1).padStart(4, '0'),
-    registeredOn: new Date().toLocaleString('en-IN'),
-    name:      document.getElementById('f_name').value.trim(),
-    age:       document.getElementById('f_age').value,
-    gender:    document.getElementById('f_gender').value,
-    address:   document.getElementById('f_address').value.trim(),
-    mobile:    document.getElementById('f_mobile').value.trim(),
-    whatsapp:  document.getElementById('f_whatsapp').value.trim() || document.getElementById('f_mobile').value.trim(),
-    date:      document.getElementById('f_date').value,
-    time:      document.getElementById('f_time').value,
-    treatment: document.getElementById('f_treatment').value,
-    notes:     document.getElementById('f_notes').value.trim(),
-    payment:   payEl.value
-  };
-
-  patients.push(record);
-  localStorage.setItem('kdc_patients', JSON.stringify(patients));
-
-  document.getElementById('patientForm').reset();
-  const banner = document.getElementById('successBanner');
-  banner.style.display = 'block';
-  setTimeout(() => { banner.style.display = 'none'; }, 5000);
-
-  console.log('Patient registered:', record);
-}
-
-// Set today as min date
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('f_date').min = today;
-</script>
+        function updateStatus(i, val) { patients[i].status = val; localStorage.setItem('kdc_patients', JSON.stringify(patients)); }
+        function clearAllPatients() { if(confirm('Clear all data?')) { patients = []; localStorage.removeItem('kdc_patients'); renderTable(); } }
+        function exportToExcel() {
+            const ws = XLSX.utils.json_to_sheet(patients);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Patient Records");
+            XLSX.writeFile(wb, "Krishna_Dental_Care_Patients.xlsx");
+        }
+        renderDoctors();
+    </script>
 </body>
 </html>
