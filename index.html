@@ -1,3 +1,44 @@
+Bhai, maine aapki HTML file me saare updates kar diye hain.
+
+### Key Changes Made:
+
+1. **Doctors Details Added**:
+* Dr. Kishan Pandya, Dr. Kamaljeet Rajpurohit, Dr. Gaurav Patel, aur Dr. Bhavya Panchal ko dropdown aur list me add kar diya hai.
+
+
+
+
+2. **Timings & Contact Updated**:
+* Morning: 9:30 AM to 1:00 PM | Evening: 5:00 PM to 9:00 PM
+
+
+* Contact Nos: **+91 98258 22011**, **+91 98255 55804**
+
+* Email: **krishnadentalcare15@gmail.com**
+
+
+
+3. **Admin Login System Added**:
+* Ab Admin section open karte hi password prompt aayega.
+* **Default Admin Credentials**:
+* **Username**: `admin`
+* **Password**: `kdc123`
+
+
+
+
+4. **Treatments & Doctor Pics Integration**:
+* Doctor photo, RCT, Whitening, Crowns/Bridges, aur Scale Cleaning ki images code me include/reference kar di hain.
+
+
+
+
+
+---
+
+### Updated Code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +54,11 @@
 <body class="bg-slate-50 text-slate-800">
 
     <!-- TOP BAR -->
-    <div class="bg-teal-700 text-white text-xs sm:text-sm py-2 px-4 flex justify-between items-center">
-        <span><i class="fa-solid fa-location-dot text-teal-300 mr-1"></i> Shop No. 2, Rjd Arcade, Near Khodiyar Mata Temple Road & Kshitij Hotel, New Ranip, Ahmedabad-382480</span>
-        <div class="hidden md:flex space-x-4">
-            <span><i class="fa-solid fa-phone mr-1"></i> +91 98765 43210</span>
-            <span><i class="fa-solid fa-clock mr-1"></i> Mon-Sat: 10AM - 8PM</span>
+    <div class="bg-teal-700 text-white text-xs sm:text-sm py-2 px-4 flex justify-between items-center flex-wrap gap-2">
+        <span><i class="fa-solid fa-location-dot text-teal-300 mr-1"></i> Shop No. 2, RJD Arcade, GST Road, Near Khodiyar Temple, New Ranip, Ahmedabad-382480</span>
+        <div class="flex space-x-4">
+            <span><i class="fa-solid fa-phone mr-1"></i> +91 98258 22011 / 98255 55804</span>
+            <span><i class="fa-solid fa-clock mr-1"></i> Mon-Sat: 9:30 AM-1:00 PM | 5:00 PM-9:00 PM</span>
         </div>
     </div>
 
@@ -28,12 +69,12 @@
                 <div class="w-10 h-10 bg-teal-600 text-white rounded-lg flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-tooth"></i></div>
                 <div>
                     <h1 class="text-xl font-bold text-teal-800 leading-none">Krishna Dental Care</h1>
-                    <p class="text-xs text-slate-500">Multispecialty Dental Clinic</p>
+                    <p class="text-xs text-slate-500">કૃષ્ણા સાર્વજનિક દાંતનું દવાખાનું</p>
                 </div>
             </div>
             <div class="flex space-x-3">
                 <a href="#contact" class="bg-teal-600 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center"><i class="fa-solid fa-calendar-check mr-2"></i> Book Appointment</a>
-                <button onclick="toggleAdminModal()" class="bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-lg"><i class="fa-solid fa-user-gear mr-1"></i> Admin Section</button>
+                <button onclick="openAdminLogin()" class="bg-slate-800 text-white text-xs font-semibold px-3 py-2 rounded-lg"><i class="fa-solid fa-user-gear mr-1"></i> Admin Panel</button>
             </div>
         </div>
     </nav>
@@ -42,48 +83,66 @@
     <section class="bg-gradient-to-r from-teal-900 to-slate-900 text-white py-16 px-4">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div class="space-y-4">
-                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-400/30">Trusted Clinic in New Ranip</span>
+                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-400/30">Multispecialty Dental Clinic in New Ranip</span>
                 <h1 class="text-3xl sm:text-5xl font-extrabold">Healthy & Beautiful Smiles Start Here!</h1>
-                <p class="text-slate-300 text-sm">Painless, modern, and affordable dental care in New Ranip, Ahmedabad.</p>
-                <a href="#contact" class="inline-block bg-teal-500 text-slate-950 font-bold px-6 py-3 rounded-lg">Book Appointment</a>
+                <p class="text-slate-300 text-sm">Painless, advanced, and affordable dental care for you and your family.</p>
+                
+                <div class="pt-2">
+                    <h4 class="text-xs font-semibold text-teal-300 uppercase tracking-wider mb-2">Our Doctors</h4>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-200">
+                        <div><i class="fa-solid fa-user-doctor text-teal-400 mr-1"></i> Dr. Kishan Pandya</div>
+                        <div><i class="fa-solid fa-user-doctor text-teal-400 mr-1"></i> Dr. Kamaljeet Rajpurohit</div>
+                        <div><i class="fa-solid fa-user-doctor text-teal-400 mr-1"></i> Dr. Gaurav Patel</div>
+                        <div><i class="fa-solid fa-user-doctor text-teal-400 mr-1"></i> Dr. Bhavya Panchal</div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="inline-block bg-teal-500 text-slate-950 font-bold px-6 py-3 rounded-lg mt-4">Book Appointment</a>
             </div>
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" class="rounded-2xl shadow-2xl object-cover h-80 w-full" alt="Clinic">
+            <div class="relative">
+                <img src="image_094825.jpg" alt="Doctor Profile" class="rounded-2xl shadow-2xl object-cover h-80 w-full border-4 border-teal-500/30">
+            </div>
         </div>
     </section>
 
     <!-- SERVICES WITH PICS -->
     <section id="services" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-extrabold text-slate-900 text-center mb-8">Our Dental Services</h2>
+            <h2 class="text-3xl font-extrabold text-slate-900 text-center mb-8">Our Specialist Treatments</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
                 <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="RCT">
+                    <img src="image_094c64.jpg" class="h-48 w-full object-cover" alt="Teeth Whitening">
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-800">Root Canal Treatment</h3>
-                        <p class="text-xs text-slate-600 mt-1">Painless single-visit root canal treatments.</p>
+                        <h3 class="font-bold text-slate-800">Teeth Whitening & Bleaching</h3>
+                        <p class="text-xs text-slate-600 mt-1">Professional teeth whitening for bright and confident smiles.</p>
                     </div>
                 </div>
+
                 <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="Teeth Whitening">
+                    <img src="image_094fa9.jpg" class="h-48 w-full object-cover" alt="Crowns & Bridges">
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-800">Teeth Whitening & Cleaning</h3>
-                        <p class="text-xs text-slate-600 mt-1">Laser whitening & tooth scaling.</p>
+                        <h3 class="font-bold text-slate-800">Caps, Crowns & Bridges</h3>
+                        <p class="text-xs text-slate-600 mt-1">Ceramic, Metal & Zirconia crowns for gap closure and restoration.</p>
                     </div>
                 </div>
+
                 <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="Dental Implants">
+                    <img src="image_094f6c.jpg" class="h-48 w-full object-cover" alt="Scale & Cleaning">
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-800">Dental Implants</h3>
-                        <p class="text-xs text-slate-600 mt-1">Permanent replacement for missing teeth.</p>
+                        <h3 class="font-bold text-slate-800">Scaling & Cleaning</h3>
+                        <p class="text-xs text-slate-600 mt-1">Deep cleaning, plaque & stain removal, and gum care.</p>
                     </div>
                 </div>
+
                 <div class="bg-slate-50 rounded-xl overflow-hidden border shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" class="h-48 w-full object-cover" alt="Braces">
+                    <img src="image_094b84.jpg" class="h-48 w-full object-cover" alt="Root Canal Treatment">
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-800">Braces & Aligners</h3>
-                        <p class="text-xs text-slate-600 mt-1">Perfectly aligned teeth and aesthetic smiles.</p>
+                        <h3 class="font-bold text-slate-800">Root Canal & Surgery</h3>
+                        <p class="text-xs text-slate-600 mt-1">Painless single-visit root canal & minor oral surgeries.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -92,11 +151,17 @@
     <section id="contact" class="py-16 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="bg-white p-6 rounded-2xl shadow-sm border">
-                <h3 class="text-xl font-bold text-slate-900 mb-4">Contact Information</h3>
-                <p class="text-xs text-slate-600 mb-2"><strong>Address:</strong> Shop No. 2, Rjd Arcade, Near Khodiyar Mata Temple Road & Kshitij Hotel, New Ranip, Ahmedabad-382480, Gujarat</p>
-                <p class="text-xs text-slate-600 mb-2"><strong>Phone:</strong> +91 98765 43210</p>
-                <p class="text-xs text-slate-600"><strong>Timings:</strong> 10:00 AM - 8:00 PM</p>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Contact & Timings</h3>
+                <p class="text-xs text-slate-600 mb-2"><strong>Address:</strong> Shop No. 2, RJD Arcade, GST Road, Near Khodiyar Temple Road, New Ranip, Ahmedabad - 382480</p>
+                <p class="text-xs text-slate-600 mb-2"><strong>Phone:</strong> +91 98258 22011 / +91 98255 55804</p>
+                <p class="text-xs text-slate-600 mb-2"><strong>Email:</strong> krishnadentalcare15@gmail.com</p>
+                <div class="bg-teal-50 p-3 rounded-lg border border-teal-200 mt-3 text-xs text-teal-800">
+                    <p class="font-bold mb-1"><i class="fa-solid fa-clock mr-1"></i> Clinic Timings (સમય):</p>
+                    <p> Morning (સવારે): 9:30 AM to 1:00 PM</p>
+                    <p> Evening (સાંજે): 5:00 PM to 9:00 PM</p>
+                </div>
             </div>
+
             <div class="bg-white p-6 rounded-2xl shadow-sm border">
                 <h3 class="text-xl font-bold text-slate-900 mb-4">Book Appointment</h3>
                 <form id="appointmentForm" onsubmit="handleAppointmentSubmit(event)" class="space-y-3">
@@ -104,23 +169,38 @@
                     <input type="tel" id="patientMobile" placeholder="Mobile No. *" required class="w-full p-2 border rounded text-xs">
                     <select id="assignedDoctor" class="w-full p-2 border rounded text-xs"></select>
                     <select id="patientTreatment" class="w-full p-2 border rounded text-xs">
-                        <option value="Teeth Cleaning">Teeth Cleaning</option>
+                        <option value="Teeth Cleaning & Scaling">Teeth Cleaning & Scaling</option>
                         <option value="Root Canal Treatment (RCT)">Root Canal Treatment (RCT)</option>
-                        <option value="Dental Implant">Dental Implant</option>
+                        <option value="Teeth Whitening">Teeth Whitening</option>
+                        <option value="Crowns & Bridges (Caps)">Crowns & Bridges (Caps)</option>
+                        <option value="Dental Implants">Dental Implants</option>
                         <option value="Braces / Aligners">Braces / Aligners</option>
                     </select>
                     <input type="date" id="visitDate" required class="w-full p-2 border rounded text-xs">
-                    <button type="submit" class="w-full bg-teal-600 text-white font-bold py-2 rounded text-xs">Submit & Save to System</button>
+                    <button type="submit" class="w-full bg-teal-600 text-white font-bold py-2 rounded text-xs hover:bg-teal-700">Submit & Save Appointment</button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminAuthModal" class="fixed inset-0 bg-slate-900/60 hidden flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-xl w-full max-w-sm p-6 shadow-xl">
+            <h3 class="font-bold text-lg text-slate-900 mb-4 text-center"><i class="fa-solid fa-lock text-teal-600 mr-2"></i>Admin Login</h3>
+            <div class="space-y-3">
+                <input type="text" id="adminUser" placeholder="Username" class="w-full p-2 border rounded text-xs">
+                <input type="password" id="adminPass" placeholder="Password" class="w-full p-2 border rounded text-xs">
+                <button onclick="verifyAdminLogin()" class="w-full bg-teal-600 text-white font-bold py-2 rounded text-xs">Login</button>
+                <button onclick="closeAdminAuthModal()" class="w-full bg-slate-200 text-slate-700 font-bold py-2 rounded text-xs">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <!-- ADMIN MODAL -->
     <div id="adminModal" class="fixed inset-0 bg-slate-900/60 hidden flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-2xl w-full max-w-4xl p-6 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="font-bold text-lg">Admin Panel — Patients & Doctors</h3>
+                <h3 class="font-bold text-lg">Admin Panel — Patient Records</h3>
                 <button onclick="toggleAdminModal()" class="text-slate-500"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
             <div class="flex space-x-3 mb-4">
@@ -129,7 +209,7 @@
             </div>
             <table class="w-full text-left text-xs border">
                 <thead class="bg-slate-100">
-                    <tr><th class="p-2">ID</th><th class="p-2">Name</th><th class="p-2">Mobile</th><th class="p-2">Doctor</th><th class="p-2">Treatment</th><th class="p-2">Status</th></tr>
+                    <tr><th class="p-2">ID</th><th class="p-2">Name</th><th class="p-2">Mobile</th><th class="p-2">Doctor</th><th class="p-2">Treatment</th><th class="p-2">Date</th><th class="p-2">Status</th></tr>
                 </thead>
                 <tbody id="patientTableBody"></tbody>
             </table>
@@ -137,7 +217,12 @@
     </div>
 
     <script>
-        let doctors = JSON.parse(localStorage.getItem('kdc_doctors')) || [{ name: "Dr. Bhavya Panchal", spec: "Chief Dentist" }];
+        let doctors = JSON.parse(localStorage.getItem('kdc_doctors')) || [
+            { name: "Dr. Kishan Pandya", spec: "Dental Surgeon" },
+            { name: "Dr. Kamaljeet Rajpurohit", spec: "Dental Specialist" },
+            { name: "Dr. Gaurav Patel", spec: "Dental Specialist" },
+            { name: "Dr. Bhavya Panchal", spec: "Chief Dentist" }
+        ];
         let patients = JSON.parse(localStorage.getItem('kdc_patients')) || [];
 
         function renderDoctors() {
@@ -158,12 +243,31 @@
             localStorage.setItem('kdc_patients', JSON.stringify(patients));
             alert('Appointment Submitted & Saved successfully!');
             document.getElementById('appointmentForm').reset();
-            renderTable();
+        }
+
+        function openAdminLogin() {
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+        }
+
+        function verifyAdminLogin() {
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+
+            if (user === 'admin' && pass === 'kdc123') {
+                closeAdminAuthModal();
+                document.getElementById('adminModal').classList.remove('hidden');
+                renderTable();
+            } else {
+                alert('Invalid Username or Password!');
+            }
         }
 
         function toggleAdminModal() {
             document.getElementById('adminModal').classList.toggle('hidden');
-            renderTable();
         }
 
         function renderTable() {
@@ -174,6 +278,7 @@
                     <td class="p-2">${p.mobile}</td>
                     <td class="p-2">${p.doctor}</td>
                     <td class="p-2">${p.treatment}</td>
+                    <td class="p-2">${p.visitDate}</td>
                     <td class="p-2">
                         <select onchange="updateStatus(${i}, this.value)" class="border rounded p-1">
                             <option value="Pending" ${p.status==='Pending'?'selected':''}>Pending</option>
@@ -186,7 +291,7 @@
         }
 
         function updateStatus(i, val) { patients[i].status = val; localStorage.setItem('kdc_patients', JSON.stringify(patients)); }
-        function clearAllPatients() { if(confirm('Clear all data?')) { patients = []; localStorage.removeItem('kdc_patients'); renderTable(); } }
+        function clearAllPatients() { if(confirm('Clear all patient data?')) { patients = []; localStorage.removeItem('kdc_patients'); renderTable(); } }
         function exportToExcel() {
             const ws = XLSX.utils.json_to_sheet(patients);
             const wb = XLSX.utils.book_new();
@@ -197,3 +302,5 @@
     </script>
 </body>
 </html>
+
+```
