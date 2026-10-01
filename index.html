@@ -26,7 +26,6 @@
             background-color: #059669;
             color: white;
         }
-        /* Custom scrollbar for responsive table */
         .custom-scrollbar::-webkit-scrollbar {
             height: 6px;
         }
@@ -154,7 +153,6 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                
                 <div class="bg-white p-6 sm:p-8 rounded-2xl border-t-4 border-t-emerald-600 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
                     <div>
                         <span class="text-[10px] sm:text-[11px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Single-Visit Painless</span>
@@ -190,7 +188,6 @@
                     </div>
                     <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Healthy Gums</div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -240,6 +237,7 @@
                 </div>
             </div>
 
+            <!-- APPOINTMENT FORM WITH OTHER TREATMENT FIELD & CONFIRMATION MESSAGE -->
             <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
                 <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-1">Book Your Appointment</h3>
                 <p class="text-slate-500 text-xs mb-6">Select your doctor, preferred date, and submit to reserve your consultation slot.</p>
@@ -263,15 +261,22 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Select Treatment *</label>
-                            <select id="patientTreatment" class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            <select id="patientTreatment" onchange="toggleOtherTreatmentInput(this.value)" class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                                 <option value="Root Canal Treatment (RCT)">Root Canal Treatment (RCT)</option>
                                 <option value="Teeth Cleaning & Scaling">Teeth Cleaning & Scaling</option>
                                 <option value="Teeth Whitening">Teeth Whitening</option>
                                 <option value="Crowns & Bridges (Caps)">Crowns & Bridges (Caps)</option>
                                 <option value="Dental Implants">Dental Implants</option>
                                 <option value="Braces / Aligners">Braces / Aligners</option>
+                                <option value="Other Treatment">Other Treatment</option>
                             </select>
                         </div>
+                    </div>
+
+                    <!-- DYNAMIC OTHER TREATMENT FIELD -->
+                    <div id="otherTreatmentBox" class="hidden">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Specify Other Treatment *</label>
+                        <input type="text" id="customTreatmentInput" placeholder="Enter specific treatment or problem..." class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                     </div>
 
                     <div>
@@ -309,11 +314,9 @@
         </div>
     </div>
 
-    <!-- ADVANCED MULTI-FOLDER ADMIN DASHBOARD (FULLY RESPONSIVE) -->
+    <!-- ADVANCED MULTI-FOLDER ADMIN DASHBOARD -->
     <div id="adminModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-2 sm:p-4 z-50">
         <div class="bg-white rounded-2xl sm:rounded-3xl w-full max-w-6xl p-4 sm:p-6 max-h-[95vh] overflow-y-auto shadow-2xl">
-            
-            <!-- HEADER -->
             <div class="flex justify-between items-center mb-4 sm:mb-6 border-b pb-3 sm:pb-4">
                 <div>
                     <h3 class="font-extrabold text-lg sm:text-xl text-slate-900 flex items-center gap-2">
@@ -324,7 +327,6 @@
                 <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 p-1"><i class="fa-solid fa-xmark text-xl sm:text-2xl"></i></button>
             </div>
 
-            <!-- FOLDER TABS NAVIGATION (RESPONSIVE WRAP) -->
             <div class="flex flex-wrap gap-2 border-b mb-4 pb-2">
                 <button onclick="switchTab('patients')" id="tab-patients" class="tab-btn active px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 bg-slate-100 text-slate-700">
                     <i class="fa-solid fa-user-injured"></i> Patients & Progress
@@ -337,7 +339,7 @@
                 </button>
             </div>
 
-            <!-- TAB 1: PATIENTS & PROGRESS CONTROL -->
+            <!-- TAB 1: PATIENTS -->
             <div id="view-patients" class="space-y-4">
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
                     <div class="flex flex-wrap gap-2">
@@ -369,7 +371,7 @@
                 </div>
             </div>
 
-            <!-- TAB 2: DOCTORS DIRECTORY -->
+            <!-- TAB 2: DOCTORS -->
             <div id="view-doctors" class="hidden space-y-4">
                 <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <input type="text" id="newDocName" placeholder="Doctor Full Name" class="p-2.5 border rounded-xl text-xs bg-white">
@@ -392,7 +394,7 @@
                 </div>
             </div>
 
-            <!-- TAB 3: ASSISTANTS DIRECTORY -->
+            <!-- TAB 3: ASSISTANTS -->
             <div id="view-assistants" class="hidden space-y-4">
                 <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <input type="text" id="newAstName" placeholder="Assistant Name" class="p-2.5 border rounded-xl text-xs bg-white">
@@ -436,14 +438,32 @@
             document.getElementById('assignedDoctor').innerHTML = doctors.map(d => `<option value="${d.name}">${d.name} (${d.spec})</option>`).join('');
         }
 
+        function toggleOtherTreatmentInput(val) {
+            const box = document.getElementById('otherTreatmentBox');
+            if(val === 'Other Treatment') {
+                box.classList.remove('hidden');
+                document.getElementById('customTreatmentInput').required = true;
+            } else {
+                box.classList.add('hidden');
+                document.getElementById('customTreatmentInput').required = false;
+            }
+        }
+
         function handleAppointmentSubmit(e) {
             e.preventDefault();
+            
+            let selectedTreatment = document.getElementById('patientTreatment').value;
+            if(selectedTreatment === 'Other Treatment') {
+                const customVal = document.getElementById('customTreatmentInput').value;
+                selectedTreatment = customVal ? `Other: ${customVal}` : 'Other Treatment';
+            }
+
             const newPatient = {
                 id: 'KDC-' + String(patients.length + 1).padStart(4, '0'),
                 name: document.getElementById('patientName').value,
                 mobile: document.getElementById('patientMobile').value,
                 doctor: document.getElementById('assignedDoctor').value,
-                treatment: document.getElementById('patientTreatment').value,
+                treatment: selectedTreatment,
                 visitDate: document.getElementById('visitDate').value,
                 progress: 'Consultation Scheduled',
                 notes: 'Initial Booking'
@@ -452,8 +472,11 @@
             patients.push(newPatient);
             localStorage.setItem('kdc_patients', JSON.stringify(patients));
 
-            alert('✅ Appointment Booked Successfully!');
+            // GRAMMAR CORRECTED CONFIRMATION MESSAGE
+            alert("Your appointment has been booked successfully!\n\nPlease wait for the doctor's response. Our team will connect with you via WhatsApp or Call shortly.");
+            
             document.getElementById('appointmentForm').reset();
+            document.getElementById('otherTreatmentBox').classList.add('hidden');
         }
 
         function openAdminLogin() {
