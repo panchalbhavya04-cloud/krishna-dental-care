@@ -2,14 +2,14 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Krishna Dental Care - Multispecialty Dental Clinic | New Ranip, Ahmedabad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style> 
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         .hero-gradient {
             background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
                         radial-gradient(circle at 20% 80%, rgba(14, 116, 144, 0.2) 0%, transparent 50%),
@@ -26,18 +26,26 @@
             background-color: #059669;
             color: white;
         }
+        /* Custom scrollbar for responsive table */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
 
     <!-- TOP ANNOUNCEMENT / INFO BAR -->
-    <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800/80">
+    <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-3 sm:px-4 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-2 text-center md:text-left">
-                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span><strong class="text-white font-semibold">Address:</strong> Shop No. 2, RJD Arcade, GST Road, Near Khodiyar Temple, New Ranip, Ahmedabad-382480</span>
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                <span class="text-[11px] sm:text-xs"><strong class="text-white font-semibold">Address:</strong> Shop No. 2, RJD Arcade, GST Road, Near Khodiyar Temple, New Ranip, Ahmedabad-382480</span>
             </div>
-            <div class="flex items-center space-x-6 text-xs font-medium">
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs font-medium">
                 <a href="tel:9825822011" class="hover:text-emerald-400 transition flex items-center gap-1.5"><i class="fa-solid fa-phone text-emerald-400"></i> +91 98258 22011</a>
                 <span class="hidden sm:inline-flex items-center gap-1.5 text-slate-400"><i class="fa-regular fa-clock text-emerald-400"></i> Mon-Sat: 9:30 AM-1:00 PM | 5:00 PM-9:00 PM</span>
             </div>
@@ -46,141 +54,141 @@
 
     <!-- MAIN NAVBAR -->
     <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-40 shadow-sm border-b border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-11 h-11 bg-gradient-to-tr from-emerald-600 to-teal-500 text-white rounded-2xl flex items-center justify-center font-bold text-2xl shadow-md shadow-emerald-600/20">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5 sm:space-x-3">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-gradient-to-tr from-emerald-600 to-teal-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-xl sm:text-2xl shadow-md shadow-emerald-600/20 shrink-0">
                     <i class="fa-solid fa-tooth"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-extrabold text-slate-900 tracking-tight leading-none">Krishna Dental Care</h1>
-                    <p class="text-[11px] font-bold text-emerald-700 tracking-wide mt-0.5">કૃષ્ણા સાર્વજનિક દાંતનું દવાખાનું</p>
+                    <h1 class="text-base sm:text-xl font-extrabold text-slate-900 tracking-tight leading-none">Krishna Dental Care</h1>
+                    <p class="text-[10px] sm:text-[11px] font-bold text-emerald-700 tracking-wide mt-0.5">કૃષ્ણા સાર્વજનિક દાંતનું દવાખાનું</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-3">
-                <a href="#appointment" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-check"></i> <span>Book Appointment</span>
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <a href="#appointment" class="bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] sm:text-xs font-bold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-calendar-check"></i> <span class="hidden xs:inline sm:inline">Book</span>
                 </a>
-                <button onclick="openAdminLogin()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5">
+                <button onclick="openAdminLogin()" class="bg-slate-900 hover:bg-slate-800 text-white text-[11px] sm:text-xs font-semibold px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl transition flex items-center gap-1.5">
                     <i class="fa-solid fa-lock text-emerald-400"></i> <span>Admin</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- CLEAN HERO SECTION (PHOTO BOX REMOVED) -->
-    <section class="relative hero-gradient text-white py-16 lg:py-20 px-4 overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center space-y-6 relative z-10">
-            <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 text-xs font-bold px-4 py-2 rounded-full">
+    <!-- CLEAN HERO SECTION -->
+    <section class="relative hero-gradient text-white py-12 sm:py-16 lg:py-20 px-4 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center space-y-5 sm:space-y-6 relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 text-[11px] sm:text-xs font-bold px-3.5 py-1.5 sm:py-2 rounded-full">
                 <i class="fa-solid fa-shield-halved text-emerald-400"></i>
                 <span>Trusted Dental Expertise in New Ranip</span>
             </div>
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.12]">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15]">
                 Advanced & Gentle <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-white">Care for Your Smile</span>
             </h1>
-            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
+            <p class="text-slate-300 text-xs sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
                 Experience modern dentistry with state-of-the-art technology, painless treatment protocols, and complete sterilization safety.
             </p>
             
             <!-- DOCTORS TEAM SHOWCASE -->
-            <div class="pt-6">
-                <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
+            <div class="pt-4 sm:pt-6">
+                <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3 sm:mb-4 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-user-doctor"></i> Our Specialist Panel
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                    <div class="bg-slate-900/60 p-4 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition">
-                        <p class="font-bold text-sm text-white">Dr. Kamaljeet Rajpurohit</p>
-                        <p class="text-[11px] text-emerald-300 font-semibold mt-0.5">BDS (Dental Surgeon)</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto px-2">
+                    <div class="bg-slate-900/60 p-3.5 sm:p-4 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition">
+                        <p class="font-bold text-xs sm:text-sm text-white">Dr. Kamaljeet Rajpurohit</p>
+                        <p class="text-[10px] sm:text-[11px] text-emerald-300 font-semibold mt-0.5">BDS (Dental Surgeon)</p>
                     </div>
-                    <div class="bg-slate-900/60 p-4 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition">
-                        <p class="font-bold text-sm text-white">Dr. Kishan Pandya</p>
-                        <p class="text-[11px] text-emerald-300 font-semibold mt-0.5">Dental Surgeon</p>
+                    <div class="bg-slate-900/60 p-3.5 sm:p-4 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition">
+                        <p class="font-bold text-xs sm:text-sm text-white">Dr. Kishan Pandya</p>
+                        <p class="text-[10px] sm:text-[11px] text-emerald-300 font-semibold mt-0.5">Dental Surgeon</p>
                     </div>
-                    <div class="bg-slate-900/60 p-4 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition">
-                        <p class="font-bold text-sm text-white">Dr. Gaurav Patel</p>
-                        <p class="text-[11px] text-emerald-300 font-semibold mt-0.5">Dental Specialist</p>
+                    <div class="bg-slate-900/60 p-3.5 sm:p-4 rounded-2xl border border-white/10 hover:border-emerald-400/40 transition">
+                        <p class="font-bold text-xs sm:text-sm text-white">Dr. Gaurav Patel</p>
+                        <p class="text-[10px] sm:text-[11px] text-emerald-300 font-semibold mt-0.5">Dental Specialist</p>
                     </div>
                 </div>
             </div>
 
             <!-- CALL TO ACTIONS -->
-            <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
-                <a href="#appointment" class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/20 transition text-sm flex items-center gap-2">
+            <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a href="#appointment" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl shadow-xl shadow-emerald-500/20 transition text-xs sm:text-sm flex items-center justify-center gap-2">
                     <i class="fa-solid fa-calendar-plus"></i> Book Consultation
                 </a>
-                <a href="https://wa.me/919825822011" target="_blank" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-4 rounded-2xl border border-white/15 transition text-sm flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Quick Chat
+                <a href="https://wa.me/919825822011" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-6 sm:px-6 py-3.5 sm:py-4 rounded-2xl border border-white/15 transition text-xs sm:text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-base sm:text-lg"></i> Quick Chat
                 </a>
             </div>
         </div>
     </section>
 
     <!-- HIGHLIGHT STATS -->
-    <section class="bg-white py-10 border-b border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section class="bg-white py-8 sm:py-10 border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div>
-                <p class="text-3xl sm:text-4xl font-black text-slate-900">10,000+</p>
-                <p class="text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Satisfied Patients</p>
+                <p class="text-2xl sm:text-4xl font-black text-slate-900">10,000+</p>
+                <p class="text-[10px] sm:text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Satisfied Patients</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-black text-slate-900">12+ Years</p>
-                <p class="text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Clinical Excellence</p>
+                <p class="text-2xl sm:text-4xl font-black text-slate-900">12+ Years</p>
+                <p class="text-[10px] sm:text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Clinical Excellence</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-black text-slate-900">4.9 ★</p>
-                <p class="text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Google Rating</p>
+                <p class="text-2xl sm:text-4xl font-black text-slate-900">4.9 ★</p>
+                <p class="text-[10px] sm:text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Google Rating</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl font-black text-slate-900">100%</p>
-                <p class="text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Hygiene Guaranteed</p>
+                <p class="text-2xl sm:text-4xl font-black text-slate-900">100%</p>
+                <p class="text-[10px] sm:text-xs text-emerald-700 font-bold uppercase tracking-wider mt-1">Hygiene Guaranteed</p>
             </div>
         </div>
     </section>
 
     <!-- SERVICES SECTION -->
-    <section id="services" class="py-20 bg-slate-50">
+    <section id="services" class="py-12 sm:py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-emerald-700 font-bold text-xs uppercase tracking-widest bg-emerald-100/80 px-3.5 py-1.5 rounded-full">Clinical Specialties</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Our Dedicated Treatments</h2>
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+                <span class="text-emerald-700 font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-emerald-100/80 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full">Clinical Specialties</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3">Our Dedicated Treatments</h2>
                 <p class="text-slate-600 text-xs sm:text-sm mt-2">Designed for patient comfort, swift recovery, and long-lasting oral wellness.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 
-                <div class="bg-white p-8 rounded-2xl border-t-4 border-t-emerald-600 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border-t-4 border-t-emerald-600 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Single-Visit Painless</span>
-                        <h3 class="font-extrabold text-slate-900 text-lg">Root Canal Therapy</h3>
-                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">Advanced rotary endodontic treatment designed to save infected teeth quickly and comfortably.</p>
+                        <span class="text-[10px] sm:text-[11px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Single-Visit Painless</span>
+                        <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Root Canal Therapy</h3>
+                        <p class="text-xs text-slate-600 mt-2 sm:mt-3 leading-relaxed">Advanced rotary endodontic treatment designed to save infected teeth quickly and comfortably.</p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Fast Recovery</div>
+                    <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Fast Recovery</div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl border-t-4 border-t-teal-500 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border-t-4 border-t-teal-500 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[11px] font-bold text-teal-600 uppercase tracking-wider block mb-1">Smile Enhancement</span>
-                        <h3 class="font-extrabold text-slate-900 text-lg">Laser Teeth Whitening</h3>
-                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">Safe and instant whitening solutions to eliminate stubborn stains and bring back your bright smile.</p>
+                        <span class="text-[10px] sm:text-[11px] font-bold text-teal-600 uppercase tracking-wider block mb-1">Smile Enhancement</span>
+                        <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Laser Teeth Whitening</h3>
+                        <p class="text-xs text-slate-600 mt-2 sm:mt-3 leading-relaxed">Safe and instant whitening solutions to eliminate stubborn stains and bring back your bright smile.</p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Instant Shine</div>
+                    <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Instant Shine</div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl border-t-4 border-t-cyan-500 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border-t-4 border-t-cyan-500 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[11px] font-bold text-cyan-600 uppercase tracking-wider block mb-1">Durable & Natural</span>
-                        <h3 class="font-extrabold text-slate-900 text-lg">Crowns & Bridges</h3>
-                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">Premium Zirconia and Ceramic caps customized for natural look, full strength, and long durability.</p>
+                        <span class="text-[10px] sm:text-[11px] font-bold text-cyan-600 uppercase tracking-wider block mb-1">Durable & Natural</span>
+                        <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Crowns & Bridges</h3>
+                        <p class="text-xs text-slate-600 mt-2 sm:mt-3 leading-relaxed">Premium Zirconia and Ceramic caps customized for natural look, full strength, and long durability.</p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-wider">100% Custom Fit</div>
+                    <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">100% Custom Fit</div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl border-t-4 border-t-indigo-500 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border-t-4 border-t-indigo-500 border-x border-b border-slate-200/90 shadow-sm card-hover flex flex-col justify-between">
                     <div>
-                        <span class="text-[11px] font-bold text-indigo-600 uppercase tracking-wider block mb-1">Preventive Oral Care</span>
-                        <h3 class="font-extrabold text-slate-900 text-lg">Ultrasonic Scaling</h3>
-                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">Deep cleaning and calculus removal treatment to protect gums and ensure fresh oral hygiene.</p>
+                        <span class="text-[10px] sm:text-[11px] font-bold text-indigo-600 uppercase tracking-wider block mb-1">Preventive Oral Care</span>
+                        <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Ultrasonic Scaling</h3>
+                        <p class="text-xs text-slate-600 mt-2 sm:mt-3 leading-relaxed">Deep cleaning and calculus removal treatment to protect gums and ensure fresh oral hygiene.</p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Healthy Gums</div>
+                    <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Healthy Gums</div>
                 </div>
 
             </div>
@@ -188,18 +196,18 @@
     </section>
 
     <!-- APPOINTMENT & CLINIC DETAILS SECTION -->
-    <section id="appointment" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <section id="appointment" class="py-12 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             
-            <div class="lg:col-span-5 bg-slate-950 text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between border border-slate-800">
+            <div class="lg:col-span-5 bg-slate-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between border border-slate-800">
                 <div>
                     <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider block mb-1">Visit Our Clinic</span>
-                    <h3 class="text-2xl font-black">Clinic Information</h3>
+                    <h3 class="text-xl sm:text-2xl font-black">Clinic Information</h3>
                     <p class="text-slate-400 text-xs mt-2 leading-relaxed">Visit Krishna Dental Care for professional dental solutions in New Ranip, Ahmedabad.</p>
                     
-                    <div class="mt-8 space-y-5 text-xs">
+                    <div class="mt-6 sm:mt-8 space-y-4 sm:space-y-5 text-xs">
                         <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-emerald-400 text-base mt-0.5"></i>
+                            <i class="fa-solid fa-location-dot text-emerald-400 text-base mt-0.5 shrink-0"></i>
                             <div>
                                 <strong class="block text-white">Location Address:</strong>
                                 <span class="text-slate-300">Shop No. 2, RJD Arcade, GST Road, Near Khodiyar Temple, New Ranip, Ahmedabad - 382480</span>
@@ -207,7 +215,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-emerald-400 text-base"></i>
+                            <i class="fa-solid fa-phone text-emerald-400 text-base shrink-0"></i>
                             <div>
                                 <strong class="block text-white">Direct Contacts:</strong>
                                 <span class="text-slate-300">+91 98258 22011 / +91 98255 55804</span>
@@ -215,7 +223,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-emerald-400 text-base"></i>
+                            <i class="fa-solid fa-envelope text-emerald-400 text-base shrink-0"></i>
                             <div>
                                 <strong class="block text-white">Official Email:</strong>
                                 <span class="text-slate-300">krishnadentalcare15@gmail.com</span>
@@ -224,38 +232,38 @@
                     </div>
                 </div>
 
-                <div class="bg-white/5 p-4 rounded-2xl border border-white/10 mt-8 text-xs space-y-1">
-                    <p class="font-bold text-emerald-400 text-sm mb-2"><i class="fa-regular fa-clock mr-1"></i> Consultation Hours (સમય):</p>
+                <div class="bg-white/5 p-4 rounded-2xl border border-white/10 mt-6 sm:mt-8 text-xs space-y-1">
+                    <p class="font-bold text-emerald-400 text-xs sm:text-sm mb-2"><i class="fa-regular fa-clock mr-1"></i> Consultation Hours (સમય):</p>
                     <p class="text-slate-300"><strong>Morning:</strong> 9:30 AM to 1:00 PM</p>
                     <p class="text-slate-300"><strong>Evening:</strong> 5:00 PM to 9:00 PM</p>
-                    <p class="text-emerald-400 text-[11px] font-semibold mt-2">Monday – Saturday (Sunday Closed)</p>
+                    <p class="text-emerald-400 text-[10px] sm:text-[11px] font-semibold mt-2">Monday – Saturday (Sunday Closed)</p>
                 </div>
             </div>
 
-            <div class="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
-                <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Book Your Appointment</h3>
+            <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-1">Book Your Appointment</h3>
                 <p class="text-slate-500 text-xs mb-6">Select your doctor, preferred date, and submit to reserve your consultation slot.</p>
 
                 <form id="appointmentForm" onsubmit="handleAppointmentSubmit(event)" class="space-y-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Patient Name *</label>
-                            <input type="text" id="patientName" placeholder="Enter full name" required class="w-full p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            <input type="text" id="patientName" placeholder="Enter full name" required class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number *</label>
-                            <input type="tel" id="patientMobile" placeholder="Enter phone number" required class="w-full p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            <input type="tel" id="patientMobile" placeholder="Enter phone number" required class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Select Doctor *</label>
-                            <select id="assignedDoctor" class="w-full p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"></select>
+                            <select id="assignedDoctor" class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500"></select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Select Treatment *</label>
-                            <select id="patientTreatment" class="w-full p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                            <select id="patientTreatment" class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                                 <option value="Root Canal Treatment (RCT)">Root Canal Treatment (RCT)</option>
                                 <option value="Teeth Cleaning & Scaling">Teeth Cleaning & Scaling</option>
                                 <option value="Teeth Whitening">Teeth Whitening</option>
@@ -268,10 +276,10 @@
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Appointment Date *</label>
-                        <input type="date" id="visitDate" required class="w-full p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        <input type="date" id="visitDate" required class="w-full p-3 sm:p-3.5 border border-slate-300 rounded-xl text-xs bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
                     </div>
 
-                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-4 rounded-xl text-xs shadow-lg shadow-emerald-600/20 transition">
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-3.5 sm:py-4 rounded-xl text-xs shadow-lg shadow-emerald-600/20 transition">
                         Confirm Appointment Booking
                     </button>
                 </form>
@@ -281,15 +289,15 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-8 px-4 text-center text-xs border-t border-slate-800">
+    <footer class="bg-slate-950 text-slate-400 py-6 sm:py-8 px-4 text-center text-xs border-t border-slate-800">
         <p>© 2026 Krishna Dental Care (કૃષ્ણા સાર્વજનિક દાંતનું દવાખાનું). All Rights Reserved.</p>
         <p class="mt-1 text-slate-500">Serving New Ranip, Ahmedabad with Excellence in Oral Healthcare.</p>
     </footer>
 
     <!-- ADMIN AUTH MODAL -->
     <div id="adminAuthModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl border border-slate-100">
-            <h3 class="font-extrabold text-lg text-slate-900 mb-4 text-center flex items-center justify-center gap-2">
+        <div class="bg-white rounded-2xl w-full max-w-sm p-5 sm:p-6 shadow-2xl border border-slate-100">
+            <h3 class="font-extrabold text-base sm:text-lg text-slate-900 mb-4 text-center flex items-center justify-center gap-2">
                 <i class="fa-solid fa-user-shield text-emerald-600"></i> Admin Panel Access
             </h3>
             <div class="space-y-3">
@@ -301,60 +309,59 @@
         </div>
     </div>
 
-    <!-- ADVANCED MULTI-FOLDER ADMIN DASHBOARD -->
-    <div id="adminModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-3xl w-full max-w-6xl p-6 max-h-[90vh] overflow-y-auto shadow-2xl">
+    <!-- ADVANCED MULTI-FOLDER ADMIN DASHBOARD (FULLY RESPONSIVE) -->
+    <div id="adminModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-2 sm:p-4 z-50">
+        <div class="bg-white rounded-2xl sm:rounded-3xl w-full max-w-6xl p-4 sm:p-6 max-h-[95vh] overflow-y-auto shadow-2xl">
             
             <!-- HEADER -->
-            <div class="flex justify-between items-center mb-6 border-b pb-4">
+            <div class="flex justify-between items-center mb-4 sm:mb-6 border-b pb-3 sm:pb-4">
                 <div>
-                    <h3 class="font-extrabold text-xl text-slate-900 flex items-center gap-2">
-                        <i class="fa-solid fa-hospital-user text-emerald-600"></i> Clinic Management Console
+                    <h3 class="font-extrabold text-lg sm:text-xl text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-hospital-user text-emerald-600"></i> Clinic Console
                     </h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Control Patient Progress, Doctors, and Staff Assistants.</p>
+                    <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Manage Patients, Doctors & Staff Assistants.</p>
                 </div>
-                <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-2xl"></i></button>
+                <button onclick="toggleAdminModal()" class="text-slate-400 hover:text-slate-700 p-1"><i class="fa-solid fa-xmark text-xl sm:text-2xl"></i></button>
             </div>
 
-            <!-- FOLDER TABS NAVIGATION -->
-            <div class="flex space-x-2 border-b mb-6 pb-2">
-                <button onclick="switchTab('patients')" id="tab-patients" class="tab-btn active px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-100 text-slate-700">
-                    <i class="fa-solid fa-user-injured"></i> Patients & Treatment Progress
+            <!-- FOLDER TABS NAVIGATION (RESPONSIVE WRAP) -->
+            <div class="flex flex-wrap gap-2 border-b mb-4 pb-2">
+                <button onclick="switchTab('patients')" id="tab-patients" class="tab-btn active px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 bg-slate-100 text-slate-700">
+                    <i class="fa-solid fa-user-injured"></i> Patients & Progress
                 </button>
-                <button onclick="switchTab('doctors')" id="tab-doctors" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-100 text-slate-700">
+                <button onclick="switchTab('doctors')" id="tab-doctors" class="tab-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 bg-slate-100 text-slate-700">
                     <i class="fa-solid fa-user-doctor"></i> Doctors Panel
                 </button>
-                <button onclick="switchTab('assistants')" id="tab-assistants" class="tab-btn px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 bg-slate-100 text-slate-700">
-                    <i class="fa-solid fa-id-card-clip"></i> Assistants / Staff
+                <button onclick="switchTab('assistants')" id="tab-assistants" class="tab-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 bg-slate-100 text-slate-700">
+                    <i class="fa-solid fa-id-card-clip"></i> Assistants
                 </button>
             </div>
 
             <!-- TAB 1: PATIENTS & PROGRESS CONTROL -->
             <div id="view-patients" class="space-y-4">
-                <div class="flex justify-between items-center">
-                    <div class="flex space-x-2">
-                        <button onclick="exportToExcel()" class="bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-700 shadow-md flex items-center gap-2">
-                            <i class="fa-solid fa-file-excel"></i> Export Patients Excel
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="exportToExcel()" class="bg-emerald-600 text-white text-[11px] sm:text-xs font-bold px-3.5 py-2 sm:py-2.5 rounded-xl hover:bg-emerald-700 shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-file-excel"></i> Export Excel
                         </button>
-                        <button onclick="clearAllPatients()" class="bg-rose-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-rose-700 shadow-md">
+                        <button onclick="clearAllPatients()" class="bg-rose-600 text-white text-[11px] sm:text-xs font-bold px-3.5 py-2 sm:py-2.5 rounded-xl hover:bg-rose-700 shadow-md">
                             Clear Records
                         </button>
                     </div>
-                    <span class="text-xs font-semibold text-slate-500">Showing Patient Progression Cards</span>
                 </div>
 
-                <div class="overflow-x-auto border rounded-2xl">
-                    <table class="w-full text-left text-xs">
+                <div class="overflow-x-auto custom-scrollbar border rounded-2xl">
+                    <table class="w-full text-left text-xs min-w-[700px]">
                         <thead class="bg-slate-100 text-slate-700 font-bold">
                             <tr>
-                                <th class="p-3.5 border-b">ID</th>
-                                <th class="p-3.5 border-b">Patient</th>
-                                <th class="p-3.5 border-b">Mobile</th>
-                                <th class="p-3.5 border-b">Doctor</th>
-                                <th class="p-3.5 border-b">Treatment</th>
-                                <th class="p-3.5 border-b">Progress Stage</th>
-                                <th class="p-3.5 border-b">Clinical Notes</th>
-                                <th class="p-3.5 border-b">Action</th>
+                                <th class="p-3 border-b">ID</th>
+                                <th class="p-3 border-b">Patient</th>
+                                <th class="p-3 border-b">Mobile</th>
+                                <th class="p-3 border-b">Doctor</th>
+                                <th class="p-3 border-b">Treatment</th>
+                                <th class="p-3 border-b">Progress Stage</th>
+                                <th class="p-3 border-b">Clinical Notes</th>
+                                <th class="p-3 border-b">Action</th>
                             </tr>
                         </thead>
                         <tbody id="patientTableBody"></tbody>
@@ -364,20 +371,20 @@
 
             <!-- TAB 2: DOCTORS DIRECTORY -->
             <div id="view-doctors" class="hidden space-y-4">
-                <div class="bg-slate-50 p-4 rounded-2xl border grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <input type="text" id="newDocName" placeholder="Doctor Full Name" class="p-2.5 border rounded-xl text-xs">
-                    <input type="text" id="newDocSpec" placeholder="Specialization (e.g. BDS, Endodontist)" class="p-2.5 border rounded-xl text-xs">
-                    <button onclick="addDoctor()" class="bg-emerald-600 text-white text-xs font-bold rounded-xl p-2.5 hover:bg-emerald-700">
+                <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <input type="text" id="newDocName" placeholder="Doctor Full Name" class="p-2.5 border rounded-xl text-xs bg-white">
+                    <input type="text" id="newDocSpec" placeholder="Specialization (e.g. BDS, Endodontist)" class="p-2.5 border rounded-xl text-xs bg-white">
+                    <button onclick="addDoctor()" class="bg-emerald-600 text-white text-xs font-bold rounded-xl p-2.5 hover:bg-emerald-700 shadow-sm">
                         + Add New Doctor
                     </button>
                 </div>
-                <div class="overflow-x-auto border rounded-2xl">
-                    <table class="w-full text-left text-xs">
+                <div class="overflow-x-auto custom-scrollbar border rounded-2xl">
+                    <table class="w-full text-left text-xs min-w-[450px]">
                         <thead class="bg-slate-100 text-slate-700 font-bold">
                             <tr>
-                                <th class="p-3.5 border-b">Doctor Name</th>
-                                <th class="p-3.5 border-b">Specialization</th>
-                                <th class="p-3.5 border-b">Action</th>
+                                <th class="p-3 border-b">Doctor Name</th>
+                                <th class="p-3 border-b">Specialization</th>
+                                <th class="p-3 border-b">Action</th>
                             </tr>
                         </thead>
                         <tbody id="doctorTableBody"></tbody>
@@ -387,20 +394,20 @@
 
             <!-- TAB 3: ASSISTANTS DIRECTORY -->
             <div id="view-assistants" class="hidden space-y-4">
-                <div class="bg-slate-50 p-4 rounded-2xl border grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <input type="text" id="newAstName" placeholder="Assistant Name" class="p-2.5 border rounded-xl text-xs">
-                    <input type="text" id="newAstRole" placeholder="Role / Duty (e.g. Lab Tech, Dental Asst)" class="p-2.5 border rounded-xl text-xs">
-                    <button onclick="addAssistant()" class="bg-emerald-600 text-white text-xs font-bold rounded-xl p-2.5 hover:bg-emerald-700">
+                <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <input type="text" id="newAstName" placeholder="Assistant Name" class="p-2.5 border rounded-xl text-xs bg-white">
+                    <input type="text" id="newAstRole" placeholder="Role / Duty (e.g. Lab Tech)" class="p-2.5 border rounded-xl text-xs bg-white">
+                    <button onclick="addAssistant()" class="bg-emerald-600 text-white text-xs font-bold rounded-xl p-2.5 hover:bg-emerald-700 shadow-sm">
                         + Add Assistant
                     </button>
                 </div>
-                <div class="overflow-x-auto border rounded-2xl">
-                    <table class="w-full text-left text-xs">
+                <div class="overflow-x-auto custom-scrollbar border rounded-2xl">
+                    <table class="w-full text-left text-xs min-w-[450px]">
                         <thead class="bg-slate-100 text-slate-700 font-bold">
                             <tr>
-                                <th class="p-3.5 border-b">Assistant Name</th>
-                                <th class="p-3.5 border-b">Role / Duty</th>
-                                <th class="p-3.5 border-b">Action</th>
+                                <th class="p-3 border-b">Assistant Name</th>
+                                <th class="p-3 border-b">Role / Duty</th>
+                                <th class="p-3 border-b">Action</th>
                             </tr>
                         </thead>
                         <tbody id="assistantTableBody"></tbody>
@@ -412,7 +419,6 @@
     </div>
 
     <script>
-        // DATA STORAGE
         let doctors = JSON.parse(localStorage.getItem('kdc_doctors')) || [
             { name: "Dr. Kamaljeet Rajpurohit", spec: "BDS (Dental Surgeon)" },
             { name: "Dr. Kishan Pandya", spec: "Dental Surgeon" },
@@ -440,7 +446,7 @@
                 treatment: document.getElementById('patientTreatment').value,
                 visitDate: document.getElementById('visitDate').value,
                 progress: 'Consultation Scheduled',
-                notes: 'Initial Booking Done'
+                notes: 'Initial Booking'
             };
 
             patients.push(newPatient);
@@ -475,7 +481,6 @@
             document.getElementById('adminModal').classList.toggle('hidden');
         }
 
-        // TAB SWITCHING LOGIC
         function switchTab(tab) {
             ['patients', 'doctors', 'assistants'].forEach(t => {
                 document.getElementById(`view-${t}`).classList.add('hidden');
@@ -485,7 +490,6 @@
             document.getElementById(`tab-${tab}`).classList.add('active');
         }
 
-        // RENDER TABLES
         function renderAllTables() {
             renderPatientTable();
             renderDoctorTable();
@@ -495,24 +499,24 @@
         function renderPatientTable() {
             document.getElementById('patientTableBody').innerHTML = patients.map((p, i) => `
                 <tr class="border-b hover:bg-slate-50">
-                    <td class="p-3.5 border-b font-bold text-emerald-700">${p.id}</td>
-                    <td class="p-3.5 border-b font-semibold">${p.name}</td>
-                    <td class="p-3.5 border-b">${p.mobile}</td>
-                    <td class="p-3.5 border-b">${p.doctor}</td>
-                    <td class="p-3.5 border-b">${p.treatment}</td>
-                    <td class="p-3.5 border-b">
-                        <select onchange="updateProgress(${i}, this.value)" class="border rounded-lg p-1.5 text-xs bg-white font-semibold text-emerald-800">
+                    <td class="p-3 border-b font-bold text-emerald-700">${p.id}</td>
+                    <td class="p-3 border-b font-semibold">${p.name}</td>
+                    <td class="p-3 border-b">${p.mobile}</td>
+                    <td class="p-3 border-b">${p.doctor}</td>
+                    <td class="p-3 border-b">${p.treatment}</td>
+                    <td class="p-3 border-b">
+                        <select onchange="updateProgress(${i}, this.value)" class="border rounded-lg p-1 text-[11px] bg-white font-semibold text-emerald-800">
                             <option value="Consultation Scheduled" ${p.progress==='Consultation Scheduled'?'selected':''}>Consultation Scheduled</option>
                             <option value="Treatment Started" ${p.progress==='Treatment Started'?'selected':''}>Treatment Started</option>
                             <option value="Multi-Session Active" ${p.progress==='Multi-Session Active'?'selected':''}>Multi-Session Active</option>
                             <option value="Completed / Cured" ${p.progress==='Completed / Cured'?'selected':''}>Completed / Cured</option>
                         </select>
                     </td>
-                    <td class="p-3.5 border-b">
-                        <input type="text" value="${p.notes || ''}" onblur="updateNotes(${i}, this.value)" placeholder="Add progress notes..." class="p-1 border rounded text-xs w-full">
+                    <td class="p-3 border-b">
+                        <input type="text" value="${p.notes || ''}" onblur="updateNotes(${i}, this.value)" placeholder="Add notes..." class="p-1 border rounded text-[11px] w-full min-w-[120px]">
                     </td>
-                    <td class="p-3.5 border-b">
-                        <button onclick="deletePatient(${i})" class="text-rose-600 hover:text-rose-800"><i class="fa-solid fa-trash"></i></button>
+                    <td class="p-3 border-b">
+                        <button onclick="deletePatient(${i})" class="text-rose-600 hover:text-rose-800 px-1"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
             `).join('');
@@ -536,13 +540,12 @@
             }
         }
 
-        // DOCTORS MANAGEMENT
         function renderDoctorTable() {
             document.getElementById('doctorTableBody').innerHTML = doctors.map((d, i) => `
                 <tr class="border-b">
-                    <td class="p-3.5 font-bold">${d.name}</td>
-                    <td class="p-3.5 text-slate-600">${d.spec}</td>
-                    <td class="p-3.5"><button onclick="deleteDoctor(${i})" class="text-rose-600"><i class="fa-solid fa-trash"></i></button></td>
+                    <td class="p-3 font-bold">${d.name}</td>
+                    <td class="p-3 text-slate-600">${d.spec}</td>
+                    <td class="p-3"><button onclick="deleteDoctor(${i})" class="text-rose-600"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
             `).join('');
         }
@@ -567,13 +570,12 @@
             renderDoctorTable();
         }
 
-        // ASSISTANTS MANAGEMENT
         function renderAssistantTable() {
             document.getElementById('assistantTableBody').innerHTML = assistants.map((a, i) => `
                 <tr class="border-b">
-                    <td class="p-3.5 font-bold">${a.name}</td>
-                    <td class="p-3.5 text-slate-600">${a.role}</td>
-                    <td class="p-3.5"><button onclick="deleteAssistant(${i})" class="text-rose-600"><i class="fa-solid fa-trash"></i></button></td>
+                    <td class="p-3 font-bold">${a.name}</td>
+                    <td class="p-3 text-slate-600">${a.role}</td>
+                    <td class="p-3"><button onclick="deleteAssistant(${i})" class="text-rose-600"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
             `).join('');
         }
